@@ -1,7 +1,7 @@
 package com.API.workshop.rxffzz.services;
 
-import com.API.workshop.rxffzz.entities.Category;
-import com.API.workshop.rxffzz.repositories.CategoryRepository;
+import com.API.workshop.rxffzz.entities.Product;
+import com.API.workshop.rxffzz.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,16 +9,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoryService {
+public class ProductService {
     @Autowired
-    private CategoryRepository CategoryRepository;
+    private ProductRepository ProductRepository;
 
-    public List<Category> findAll(){
-        return CategoryRepository.findAll();
+    public List<Product> findAll(){
+        return ProductRepository.findAll();
     }
 
-    public Category findById(Long id){
-        Optional<Category> obj = CategoryRepository.findById(id);
+    public Product findById(Long id){
+        Optional<Product> obj = ProductRepository.findById(id);
         return obj.get();
     }
 }
